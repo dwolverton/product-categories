@@ -15,19 +15,19 @@
 		<p>
 			<label>
 				Name:
-				<input name="TODO" required />
+				<input name="name" required />
 			</label>
 		</p>
 		<p>
 			<label>
 				Description:
-				<input name="TODO" size="40"/>
+				<input name="description" size="40"/>
 			</label>
 		</p>
 		<p>
 			<label>
 				Price:
-				<input name="TODO" type="number" step="0.00" min="0" required />
+				<input name="price" type="number" step="0.00" min="0" required />
 			</label>
 		</p>
 		<p>

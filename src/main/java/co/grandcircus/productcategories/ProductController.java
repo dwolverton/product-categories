@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import co.grandcircus.productcategories.dao.ProductRepo;
+import co.grandcircus.productcategories.entity.Product;
 
 @Controller
 public class ProductController {
@@ -30,6 +32,11 @@ public class ProductController {
 	@RequestMapping("/add-product")
 	public String showAddForm() {
 		return "product-add";
+	}
+	@PostMapping("/add-product")
+	public String submitAddForm(Product product) {
+		productRepository.save(product);
+		return "redirect:/products";
 	}
 //	@PostConstruct
 //	public void preLoad() {
