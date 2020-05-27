@@ -27,6 +27,10 @@ public class ProductController {
 		return "product-list";
 	}
 	
+	@RequestMapping("/add-product")
+	public String showAddForm() {
+		return "product-add";
+	}
 //	@PostConstruct
 //	public void preLoad() {
 //		if (productRepository.count() == 0) {
