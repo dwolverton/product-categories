@@ -31,6 +31,16 @@
 			</label>
 		</p>
 		<p>
+			<label>
+				Category:
+				<select name="category">
+					<c:forEach items="${ categories }" var="category">
+						<option value="${ category.id }"><c:out value="${ category.name }" /></option>
+					</c:forEach>
+				</select>
+			</label>
+		</p>
+		<p>
 			<button type="submit">Add</button>
 			<a href="/products">Never mind.</a>
 		</p>

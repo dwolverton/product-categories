@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import co.grandcircus.productcategories.dao.CategoryRepo;
 import co.grandcircus.productcategories.dao.ProductRepo;
 import co.grandcircus.productcategories.entity.Product;
 
@@ -16,6 +17,8 @@ public class ProductController {
 
 	@Autowired
 	private ProductRepo productRepository;
+	@Autowired
+	private CategoryRepo categoryRepository;
 	
 	@RequestMapping("/products")
 	public String list(Model model) {
@@ -30,9 +33,11 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/add-product")
-	public String showAddForm() {
+	public String showAddForm(Model model) {
+		model.addAttribute("categories", categoryRepository.findAll(Sort.by("name")));
 		return "product-add";
 	}
+	
 	@PostMapping("/add-product")
 	public String submitAddForm(Product product) {
 		productRepository.save(product);
