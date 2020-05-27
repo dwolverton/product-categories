@@ -47,9 +47,4 @@ public class CategoryController {
 			categoryRepository.save(new Category("Candy", "Pink"));
 		}
 	}
-	
-	@RequestMapping("/test")
-	public String test() {
-		return "product-add";
-	}
 }
