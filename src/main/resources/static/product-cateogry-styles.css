@@ -1,0 +1,12 @@
+.category-list {
+	list-style: none;
+	padding-left: 20px;
+}
+
+.category-mark {
+	display: inline-block;
+    height: .7em;
+    width: .7em;
+    border-radius: 40%;
+    vertical-align: middle;
+}
