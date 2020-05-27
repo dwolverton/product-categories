@@ -11,14 +11,19 @@
 </head>
 <body>
 	<h1>Shop Products</h1>
+	<p>${listofproducts}</p>
 	
 	<table>
 		<tr>
 			<th>Name</th><th>Description</th><th>Price</th>
 		</tr>
-		<tr>
-			<td>NAME</td><td>THIS IS A DESCRIPTOIN HERE</td><td><fmt:formatNumber type="currency" value="100"/></td>
+	    <c:forEach items="${listofproducts}" var="product">
+	    <tr>
+	    	<td>${product.name}</td>
+			<td>${product.description}</td>
+			<td><fmt:formatNumber type="currency" value="${product.price}"/></td>
 		</tr>
+		</c:forEach>
 	</table>
 	
 	<p>
