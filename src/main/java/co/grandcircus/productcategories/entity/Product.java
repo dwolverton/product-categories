@@ -15,9 +15,22 @@ public class Product {
 	private String name;
 	private String description;
 	private double price;
-//	links category class
+	// links category class
 	@ManyToOne
 	private Category category;
+
+	public Product() {
+		super();
+	}
+
+	public Product(String name, String description, double price,
+			Category category) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.category = category;
+	}
 
 	public Long getId() {
 		return id;
@@ -61,8 +74,9 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price
-				+ ", category=" + category + "]";
+		return "Product [id=" + id + ", name=" + name + ", description="
+				+ description + ", price=" + price + ", category=" + category
+				+ "]";
 	}
 
 }

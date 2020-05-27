@@ -15,7 +15,7 @@
 		<c:forEach items="${ categories }" var="category">
 			<li>
 				<span class="category-mark" style="background-color: <c:out value="${category.cssColor}" />"></span>
-				<a href="/products-by-category">
+				<a href="/products-by-category?category=${ category.id }">
 					<c:out value="${ category.name }" />
 				</a>
 			</li>
