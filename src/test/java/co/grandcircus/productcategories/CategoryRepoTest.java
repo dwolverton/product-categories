@@ -36,7 +36,7 @@ class CategoryRepoTest {
 	void findAll() {
 		List<Category> categories = repo.findAll(Sort.by("name"));
 		assertEquals(3, categories.size());
-		assertEquals("Beverages", categories.get(0).getName());
+		assertEquals("Beverage", categories.get(0).getName());
 		assertEquals("Pink", categories.get(1).getCssColor());
 	}
 
